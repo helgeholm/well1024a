@@ -1,6 +1,6 @@
 {
   "name": "prng-well1024a",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Random number generator based on WELL-1024a algorithm.",
   "main": "well1024a.js",
   "scripts": {
