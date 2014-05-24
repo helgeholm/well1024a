@@ -39,9 +39,9 @@ For [Node.js](http://nodejs.org/), use [npm](http://npmjs.org/):
 Download and include as a `<script>`.  The module will be available as
 the global object `randy`.
 
-__Development:__ [well1024a.js](https://github.com/deestan/well1024a/raw/master/browser/well1024a.js) - 12Kb Uncompressed
+__Development:__ [well1024a.js](https://github.com/deestan/well1024a/raw/master/browser/well1024a.js) - 2Kb Uncompressed
 
-__Production:__ [well1024a.min.js](https://github.com/deestan/well1024a/raw/master/browser/well1024a.min.js) - 3.5Kb Minified
+__Production:__ [well1024a.min.js](https://github.com/deestan/well1024a/raw/master/browser/well1024a.min.js) - < 1Kb Minified
 
 __Example__
 
