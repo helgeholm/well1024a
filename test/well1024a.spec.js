@@ -51,14 +51,14 @@ describe("well1024a", function () {
     it("respects loaded state", function (done) {
         var w = well1024a();
         var s = w.getState();
-        var fasit = [ w.getUInt32(),
-                      w.getUInt32(),
-                      w.getUInt32() ];
+        var fasit = [];
+        for (var i = 0; i < 64; i++)
+            fasit.push(w.getUInt32());
         rep(function () {
             w.setState(s);
-            var output = [ w.getUInt32(),
-                           w.getUInt32(),
-                           w.getUInt32() ];
+            var output = [];
+            for (var i = 0; i < 64; i++)
+                output.push(w.getUInt32());
             assert.deepEqual(fasit, output);
         });
         done();

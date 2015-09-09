@@ -30,21 +30,18 @@ function well1024a (entropy_) {
     }
 
     function getState () {
-        return { seed: state.slice(0),
-                 idx: state_i };
+        return state.slice(state_i).concat(state.slice(0, state_i));
     }
 
     function setState (s) {
-        if (s.seed.length != 32)
+        if (s.length != 32)
             throw new Error("Seed not 32-length array of 32-bit UINTs");
-        if (s.idx < 0 || s.idx > 31 || Math.floor(s.idx) != s.idx)
-            throw new Error("Idx out of range [0, 31]");
-        for (var i = 0; i < s.seed.length; i++) {
-            if (s.seed[i] != s.seed[i] & 0xffffffff)
+        for (var i = 0; i < s.length; i++) {
+            if (s[i] != s[i] & 0xffffffff)
                 throw new Error("Seed not 32-length array of 32-bit UINTs");
         }
-        state = s.seed.slice(0);
-        state_i = s.idx;
+        state = s.slice(0);
+        state_i = 0;
     }
     
     function getUInt32 () {
