@@ -117,11 +117,9 @@ console.log('For Christmas this year, I want ' + w.getUInt32().toString() + ' po
 <a name="getState" />
 ## getState()
 
-Returns an object representing the current state of the random number generator.
+Returns an array of 32-bit unsigned integers, of length 32.  This represents the current state of the random number generator.
 
-The object can safely be converted to and restored from JSON.
-
-This object can be used as a parameter to `setState`.
+This array can be used as a parameter to `setState`.
 
 -----------------------------------
 
@@ -130,9 +128,11 @@ This object can be used as a parameter to `setState`.
 
 Sets the random number generator to a specific state, allowing for replay of random values.
 
+General use case is to give it a value previously received by calling `getState()`.
+
 __Arguments__
 
-* state - Must be object retrieved from an earlier call to `getState()`.
+* state - Must be an array of 32-bit unsigned integers, of length 32.
 
 __Example__
 
