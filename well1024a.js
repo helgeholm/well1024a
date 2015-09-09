@@ -54,7 +54,7 @@ function well1024a (entropy_) {
         state[state_i] = z1 ^ z2;
         state[(state_i + 31) & 0x1f] = maToNeg(-11, z0) ^ maToNeg(-7, z1) ^ maToNeg(-13, z2);
         state_i = (state_i + 31) & 0x1f;
-        return state[state_i] + 0x80000000;
+        return state[state_i] >>> 0;
     }
     
     init(entropy);
